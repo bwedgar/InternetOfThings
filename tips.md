@@ -1,10 +1,11 @@
+#INTERNET OF THINGS
 I automate things around my home using an ESP32 microcontroller, Blynk app on my iPhone and IFTTT.
 I program the ESP32 using the Arduino IDE following the instructions from RandomNerdTutorials.com but use Blynk rather than a Web Client to communicate with the ESP32
 
 
 ##To send data from the ESP32 to the Blynk app on the iPhone
 on the hardware code add
-make a Blynk timer say 
+make a Blynk timer say
 Add the code below;
 timerLightOn() {
 Blynk.virtualWrite(V6,1); where V1 is the virtual pin being written to and 1 is the value being written
@@ -14,7 +15,12 @@ in the setup {} block include the line
 on the Blynk app add a Value widget, Set the INPUT to V6 and the REFRESH INTERVAL to Push
 
 
+##To send data from the Blynk app on the iPhone to the ESP32
+????
 
+##To send data from a browser to IFTTT (use a webhook - used to be called "Maker")
+https://maker.ifttt.com/trigger/Fountain0/with/key/d................K
+IFTTT will get the Event named Fountain0 and this is used as the trigger
 
 ##To send data from the ESP32 to IFTTT use a Webhook on the Blynk App.
 The OUTPUT is set to a virtual pin say V3
@@ -23,5 +29,6 @@ METHOD is GET
 CONTENT TYPE is application/json
 for example:  https://maker.ifttt.com/trigger/Fountain/pin//with/key/de..................K
 
-
-
+##To send data from IFTTT to the Blynk app.
+Find the IP Address of the Blynk Server in your country.  Open the Terminal (or Run command) ping cloud.blynk.cc  it should look like  45.55.96.146
+http://45.55.96.146/d........................K/pin/V6   where d..........K is you authorisation key    and V6 is the virtual pin that will receive the data
