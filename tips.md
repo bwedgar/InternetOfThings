@@ -15,10 +15,10 @@ in the setup {} block include the line
 on the Blynk app add a Value widget, Set the INPUT to V6 and the REFRESH INTERVAL to Push
 
 
-##To send data from the Blynk app on the iPhone to the ESP32
-????
+##To send data from the Blynk app to the ESP32
+create a button on the Blynk app
 
-##To send data from a browser to IFTTT (use a webhook - used to be called "Maker")
+##To send data from a browser to IFTTT (use a IFTTT webhook - used to be called "Maker")
 https://maker.ifttt.com/trigger/Fountain0/with/key/d................K
 IFTTT will get the Event named Fountain0 and this is used as the trigger
 
@@ -29,6 +29,7 @@ METHOD is GET
 CONTENT TYPE is application/json
 for example:  https://maker.ifttt.com/trigger/Fountain/pin//with/key/de..................K
 
-##To send data from IFTTT to the Blynk app.
+##To send data from IFTTT to the Blynk app. (This also sends data to the ESP32)
 Find the IP Address of the Blynk Server in your country.  Open the Terminal (or Run command) ping cloud.blynk.cc  it should look like  45.55.96.146
-http://45.55.96.146/d........................K/pin/V6   where d..........K is you authorisation key    and V6 is the virtual pin that will receive the data
+http://cloud.blynk.cc/d........................K/update/V0?value=1
+METHOD=getCONTENT-TYPE=text/plain    where d..........K is you authorization key    and V0 is the virtual pin that will receive the data
